@@ -2,9 +2,9 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@nuxthub/core'],
+  modules: ['@nuxt/eslint', '@nuxthub/core', '@nuxt/ui-pro'],
   hub: { workers: true },
   nitro: { experimental: { openAPI: true } },
-  $development: { hub: { remote: true } },
   app: { head: { title: 'RNCP' } },
+  css: ['~/assets/css/main.css']
 })
