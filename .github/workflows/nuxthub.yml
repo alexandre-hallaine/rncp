@@ -34,6 +34,9 @@ jobs:
         run: pnpm build
         env:
           NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
+          NUXT_SESSION_PASSWORD: ${{ secrets.NUXT_SESSION_PASSWORD }}
+          NUXT_OAUTH_FORTYTWO_CLIENT_ID: ${{ vars.NUXT_OAUTH_FORTYTWO_CLIENT_ID }}
+          NUXT_OAUTH_FORTYTWO_CLIENT_SECRET: ${{ secrets.NUXT_OAUTH_FORTYTWO_CLIENT_SECRET }}
 
       - name: Deploy to NuxtHub
         uses: nuxt-hub/action@v1
