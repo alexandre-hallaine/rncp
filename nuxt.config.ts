@@ -8,8 +8,9 @@ export default defineNuxtConfig({
     '@nuxt/ui-pro',
     '@execrate/nuxt-auth-utils'
   ],
-  hub: { workers: true },
+  hub: { workers: true, database: true },
   nitro: { experimental: { openAPI: true } },
   app: { head: { title: 'RNCP' } },
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+  $development: { hub: { remote: true } },
 })
