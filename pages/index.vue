@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const session = authClient.useSession()
+</script>
+
 <template>
-  <p>test</p>
+  <UPageSection>
+    <UCard>
+      <pre>{{ session }}</pre>
+    </UCard>
+  </UPageSection>
 </template>
