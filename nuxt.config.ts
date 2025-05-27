@@ -6,17 +6,13 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxthub/core',
     '@nuxt/ui-pro',
-    '@execrate/nuxt-auth-utils'
   ],
   hub: {
     workers: true,
     database: true,
     bindings: {
-      queue: {
-        REFRESH_QUEUE: {
-          queue_name: '42',
-        },
-      },
+      queue: { REFRESH_QUEUE: { queue_name: '42' } },
+      compatibilityDate: '2025-05-05',
     },
   },
   nitro: { experimental: { openAPI: true } },
