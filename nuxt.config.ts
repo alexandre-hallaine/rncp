@@ -6,6 +6,8 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxthub/core',
     '@nuxt/ui-pro',
+    '@pinia/nuxt',
+    '@pinia/colada-nuxt',
   ],
   hub: {
     workers: true,
