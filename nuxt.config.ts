@@ -8,7 +8,17 @@ export default defineNuxtConfig({
     '@nuxt/ui-pro',
     '@execrate/nuxt-auth-utils'
   ],
-  hub: { workers: true, database: true },
+  hub: {
+    workers: true,
+    database: true,
+    bindings: {
+      queue: {
+        REFRESH_QUEUE: {
+          queue_name: '42',
+        },
+      },
+    },
+  },
   nitro: { experimental: { openAPI: true } },
   app: { head: { title: 'RNCP' } },
   css: ['~/assets/css/main.css'],
