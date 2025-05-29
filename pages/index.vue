@@ -1,11 +1,7 @@
-<script setup lang="ts">
-const session = authClient.useSession()
-</script>
-
 <template>
   <UPageSection>
     <UCard>
-      <pre>{{ session }}</pre>
+      <p>You are connected</p>
     </UCard>
   </UPageSection>
 </template>

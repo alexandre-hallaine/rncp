@@ -1,3 +1,6 @@
-import { createAuthClient } from "better-auth/vue" // make sure to import from better-auth/vue
+import {createAuthClient} from "better-auth/vue"
+import {genericOAuthClient} from "better-auth/client/plugins"
 
-export const authClient = createAuthClient()
+export const {signIn, signUp, useSession} = createAuthClient({
+    plugins: [genericOAuthClient()]
+})

@@ -1,3 +1,11 @@
+<script setup lang="ts">
+function login() {
+  signIn.oauth2({
+    providerId: 'fortytwo',
+  })
+}
+</script>
+
 <template>
   <UPageSection>
     <UPageCTA
@@ -5,9 +13,7 @@
         title="Path42">
       <template #links>
         <UButton
-            icon="i-lucide-graduation-cap" label="Open" @click="() => authClient.signIn.oauth2({
-          providerId: 'fortytwo',
-        })"/>
+            icon="i-lucide-graduation-cap" label="Open" @click="login"/>
       </template>
     </UPageCTA>
   </UPageSection>
