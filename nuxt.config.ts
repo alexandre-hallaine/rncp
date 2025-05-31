@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/ui-pro',
     '@pinia/nuxt',
     '@pinia/colada-nuxt',
+    '@nuxt/content'
   ],
   hub: {
     workers: true,

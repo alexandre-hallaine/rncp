@@ -9,7 +9,7 @@ interface Tokens {
     secret_valid_until: number;
 }
 
-export function getTokens() {
+function getTokens() {
     return $fetch<Tokens>("https://api.intra.42.fr/oauth/token", {
         method: 'POST',
         body: {
