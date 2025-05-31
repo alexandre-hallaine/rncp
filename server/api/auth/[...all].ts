@@ -1,3 +1,3 @@
 export default defineEventHandler((event) => {
-  return serverAuth().handler(toWebRequest(event));
+  return auth().handler(toWebRequest(event));
 });

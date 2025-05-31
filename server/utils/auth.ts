@@ -13,7 +13,7 @@ interface Profile {
 }
 
 let _auth: ReturnType<typeof betterAuth>
-export function serverAuth() {
+export function auth() {
   if (_auth) return _auth
   return _auth = betterAuth({
     database: drizzleAdapter(useDrizzle(), {
