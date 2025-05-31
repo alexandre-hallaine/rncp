@@ -21,5 +21,5 @@ export default defineNuxtConfig({
   nitro: { experimental: { openAPI: true } },
   app: { head: { title: 'Path42' } },
   css: ['~/assets/css/main.css'],
-  $development: { hub: { remote: true } },
+  $development: { hub: { remote: true } }
 })

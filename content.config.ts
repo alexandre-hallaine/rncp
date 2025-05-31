@@ -5,7 +5,7 @@ const categorySchema = z.object({
   name: z.string(),
   xp: z.number().min(0),
   amount: z.number().min(0),
-  projects: z.array(z.string())
+  projects: z.array(z.number())
 })
 
 const specializationSchema = z.object({
@@ -13,22 +13,21 @@ const specializationSchema = z.object({
   categories: z.array(categorySchema)
 })
 
-const titleSchema = z.object({
-  name: z.string(),
-  events: z.number().min(0),
-  groups: z.number().min(0),
-  professional: z.number().min(0),
-  level: z.number().min(0),
-  suite: categorySchema,
-  specializations: z.array(specializationSchema)
-})
-
 export default defineContentConfig({
   collections: {
-    rules: defineCollection({
+    titles: defineCollection({
       type: 'data',
       source: '*.json',
-      schema: titleSchema
+      schema: z.object({
+        code: z.number(),
+        name: z.string(),
+        groups: z.number().min(0),
+        level: z.number().min(0),
+        events: z.number().min(0),
+        professional: categorySchema,
+        suite: categorySchema,
+        specializations: z.array(specializationSchema)
+      })
     })
   }
 })

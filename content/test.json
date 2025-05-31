@@ -1,0 +1,61 @@
+{
+  "code": 39783,
+  "name": "Concepteur développeur de solutions informatiques",
+  "groups": 2,
+  "level": 17,
+  "events": 10,
+  "professional": {
+    "name": "Professional",
+    "xp": 0,
+    "amount": 2,
+    "projects": [
+      5202,
+      6870,
+      6875
+    ]
+  },
+  "suite": {
+    "name": "Suite",
+    "xp": 0,
+    "amount": 1,
+    "projects": [
+      7216,
+      6634,
+      7227,
+      6612,
+      7232,
+      7282,
+      7163,
+      6998,
+      7222,
+      6629
+    ]
+  },
+  "specializations": [
+    {
+      "name": "Développement web et mobile",
+      "categories": [
+        {
+          "name": "Web",
+          "xp": 15000,
+          "amount": 2,
+          "projects": [
+            446,
+            946,
+            976,
+            5175,
+            4597,
+            4598,
+            5167,
+            5168,
+            5172,
+            10595,
+            10092,
+            6624,
+            10109
+          ]
+        }
+      ]
+    }
+  ]
+}
