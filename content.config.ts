@@ -27,7 +27,7 @@ export default defineContentConfig({
   collections: {
     rules: defineCollection({
       type: 'data',
-      source: 'rules/**.json',
+      source: '*.json',
       schema: titleSchema
     })
   }

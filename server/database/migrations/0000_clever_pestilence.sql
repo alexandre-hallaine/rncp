@@ -18,7 +18,8 @@ CREATE TABLE `account` (
 CREATE TABLE `project` (
 	`id` integer PRIMARY KEY NOT NULL,
 	`name` text NOT NULL,
-	`difficulty` integer NOT NULL
+	`difficulty` integer NOT NULL,
+	`description` text NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE `session` (

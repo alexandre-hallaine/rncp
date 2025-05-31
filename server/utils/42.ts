@@ -1,4 +1,4 @@
-import {useDrizzle} from "~/server/utils/drizzle";
+import { useDrizzle } from "~/server/utils/drizzle";
 
 interface Tokens {
     access_token: string;
@@ -21,37 +21,44 @@ function getTokens() {
 }
 
 interface ProjectSession {
-    id: string;
+    id: number;
     difficulty?: number
+    description: string
     project: {
         id: string;
         name: string;
     }
 }
 
-export async function saveProjects() {
-    const {access_token} = await getTokens()
+async function saveProjects() {
+    const { access_token } = await getTokens()
 
     for (let page = 1; ; page++) {
         const projects = await $fetch<ProjectSession[]>('https://api.intra.42.fr/v2/project_sessions', {
-            headers: {Authorization: `Bearer ${access_token}`},
+            headers: { Authorization: `Bearer ${access_token}` },
             params: {
-                'filter[cursus_id]': 21, //42cursus (main)
+                'filter[campus_id]': 1, // 42 Paris
                 'page[size]': 100,
                 'page[number]': page
             }
         });
 
-
-        for (const {id, difficulty, project} of projects) {
-            if (!difficulty) continue;
-            const value = {id, difficulty, name: project.name};
+        for (const { project, ...session } of projects) {
+            if (!session.difficulty) continue;
             await useDrizzle()
                 .insert(tables.project)
-                .values(value)
+                .values({ ...project, ...session } as Project)
                 .onConflictDoNothing()
         }
 
         if (projects.length < 100) break;
     }
+}
+
+export async function getProjects() {
+    const projects = await useDrizzle().select().from(tables.project)
+    if (projects.length) return projects
+
+    await saveProjects()
+    return await getProjects()
 }

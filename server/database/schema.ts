@@ -50,4 +50,5 @@ export const project = sqliteTable('project', {
     id: integer('id').notNull().primaryKey(),
     name: text('name').notNull(),
     difficulty: integer('difficulty').notNull(),
+    description: text('description').notNull(),
 });
